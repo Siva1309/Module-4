@@ -1,71 +1,73 @@
-# Exp.No:20  
-## SEB - PYTHON PROGRAM TO PERFORM MODULO AND FLOOR DIVISION USING CLASS AND IF-ELIF STATEMENT
+# Exp.No:18  
+## FILES - FREQUENCY OF CHARACTERS IN A FILE
 
 ---
 
 ### AIM  
-To write a Python program using a class to perform modulo and floor division operations based on user choice using if-elif conditional statements.
+To write a Python program that reads a file and counts the frequency of each character in it.
 
 ---
 
 ### ALGORITHM
 
-Start the program.
-
-Define a class named SEC.
-
-Inside the class:
-
-Define a method setvalues() to take two integer inputs a and b.
-
-Define a method rem() to perform modulo operation.
-
-Define a method div() to perform floor division.
-
-Create an object of the class.
-
-Call setvalues() method using the object to set the values.
-
-Use a loop to:
-
-Ask for the user's choice.
-
-If choice is 1, call the rem() method.
-
-If choice is 2, call the div() method.
-
-If choice is 0, print “Exiting!” and break the loop.
-
-For any other choice, print “Invalid choice”.
-
-End the program.
+1. Begin the program.  
+2. Define the function `create_file()` that accepts two arguments:  
+   - `file_path`: The path to the file.  
+   - `content`: The string content to be written into the file.  
+3. Open the file specified by `file_path` in write mode (`'w'`), and write the provided `content` into the file.  
+4. Close the file (this is automatically done when exiting the `with` block).  
+5. Define the function `character_frequency()` that accepts one argument:  
+   - `file_path`: The path to the file whose character frequency is to be calculated.  
+6. Open the file specified by `file_path` in read mode (`'r'`), and read its content into the variable `content`.  
+7. Initialize an empty dictionary (`d1`) to store the frequency of each character using `defaultdict(int)`.  
+8. Loop through each character in the `content`:  
+   - For each character `ch`, increment its corresponding frequency in the dictionary `d1`.  
+9. Return the dictionary `d1`, which contains the frequency of each character in the file.  
+10. Terminate the program.
 
 ---
 
 ### PROGRAM
 
 ```
-class sec:
-    def __init__(self):
-        self.a=int(input())
-        self.b=int(input())
-        
-    def show(self):
-        c=int(input())
-        if c==1:
-            print("Result:  {}".format(self.a%self.b))
-        elif c==2:
-            print("Result:  {}".format(self.a//self.b))
-        print("Exiting!")
-                
-x=sec()
-x.show()
+from collections import defaultdict
 
+def create_file(file_path, file_content):
+    """Create a file and write content to it."""
+    with open(file_path, 'w') as file:
+        file.write(file_content)
+
+def read_file(file_path):
+    """Read and return the content of a file."""
+    with open(file_path, 'r') as file:
+        return file.read()
+
+def char_frequency(file_path):
+    """Count the frequency of each character in a file."""
+    content = read_file(file_path)
+    frequencies = defaultdict(int)
+    for char in content:
+        frequencies[char] += 1
+    return frequencies
+
+# Example usage:
+file_path = 'example.txt'
+
+# Test Case 1
+file_content = "saveetha engineering college"
+create_file(file_path, file_content)
+
+
+# Test Case 2
+file_content = "computer science engineering"
+create_file(file_path, file_content)
 
 ```
 
+
 ### OUTPUT
-![Screenshot (242)](https://github.com/user-attachments/assets/452b970e-f74f-48c0-8880-37dff0fb8877)
+![Screenshot (241)](https://github.com/user-attachments/assets/3e950e8f-f7c7-4855-a2af-426a59f8b1b3)
+
 
 ### RESULT
-Thus the pyhton program was implemented and executed successfully.
+Thus the python program was initiated and implemented successfully.

@@ -23,12 +23,21 @@ To create a Python program that prompts the user for a list of grades separated 
 ### PROGRAM
 
 ```
-Reg.No
-Name
-Add Your Code Here
+a=input()
+b=[]
+c=a.split(",")
+try:
+    for i in c:
+        b.append(int(i))
+    print(list(b))
+except:
+    print("The grades you entered were in an invalid format.")
+    print(c)
 
 ```
 
 ### OUTPUT
+![Screenshot (240)](https://github.com/user-attachments/assets/ee882348-52e3-4e08-be94-7ed0b9209d7e)
 
 ### RESULT
+Thus the python program was initiated and executed successfully

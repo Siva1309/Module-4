@@ -28,16 +28,22 @@ To write a Python program to take the radius from the user and find the area of 
 ### PROGRAM
 
 ```
-
+class umbrella:
+    def __init__(self):
+        self.p=float(input())
+        
+    def rain(self):
+        a=3.14159*self.p*self.p
+        print("Area of circle: {:.2f}".format(a))
+        
+b=umbrella()
+b.rain()
 
 
 ```
 
 ### OUTPUT
-
-
+![Screenshot (238)](https://github.com/user-attachments/assets/52d879af-2dec-4984-9252-6e2ff01d25c4)
 
 ### RESULT
-
-
-
+Thus the python program was initiated and executed successfully.
